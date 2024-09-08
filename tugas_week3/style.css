@@ -1,0 +1,82 @@
+/* <!-- Kelompok 1 -->
+<!-- Abyan Setyaneva              24060122130058 -->
+<!-- David Cristian Batubara      24060122130094 -->
+<!-- Gigih Haidar Falah           24060122130094 -->
+<!-- Rizqi Wildan Gilan R.        24060122140114 -->
+<!-- Adriel Silaban               24060120140095 --> */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--secondaryBackgroundColor);
+  padding: 1rem;
+}
+
+.Headline {
+  color: red;
+  padding: 1rem 2rem 2rem 1rem;
+  text-align: center;
+}
+
+.Form-questions {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: whitesmoke;
+  border: 2px solid red;
+  border-radius: 0.7rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 1rem auto 0;
+}
+
+button:hover {
+  background-color: rgb(114, 9, 9);
+  color: aliceblue;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--borderColor);
+  border-radius: var(--itemBorderRadius);
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.email {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--borderColor);
+  border-radius: var(--itemBorderRadius);
+  font-size: 1rem;
+}
