@@ -1,0 +1,90 @@
+<!-- Kelompok 1 -->
+<!-- Abyan Setyaneva              24060122130058 -->
+<!-- David Cristian Batubara      24060122130094 -->
+<!-- Gigih Haidar Falah           24060122130094 -->
+<!-- Rizqi Wildan Gilan R.        24060122140114 -->
+<!-- Adriel Silaban               24060120140095 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Submission</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1 class="Headline">Student Sign On Form</h1>
+
+    <div class="Form-questions">
+    <form name="myForm" action="submit.php" method="POST">
+      <!-- Username -->
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Gigih Haidar" /><br /><br />
+
+      <!-- Email -->
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" class="email" placeholder="Gigihganteng@gmail.com"/><br /><br />
+
+      <!-- University -->
+      <label for="university">Perguruan Tinggi:</label>
+      <input type="text" id="university" name="university" placeholder="Universitas Diponegoro"/><br /><br />
+
+      <!-- Program Studi-->
+      <label for="program">Program Studi:</label><br />
+      <input
+        type="radio"
+        id="if"
+        name="program"
+        value="Informatika"
+      />Informatika<br />
+      <input
+        type="radio"
+        id="mtk"
+        name="program"
+        value="Matematika"
+      />Matematika<br />
+      <input type="radio" id="fis" name="program" value="Fisika" />Fisika<br />
+      <input type="radio" id="kim" name="program" value="Kimia" />Kimia<br />
+      <input
+        type="radio"
+        id="stat"
+        name="program"
+        value="Statistika"
+      />Statistika<br />
+      <input
+        type="radio"
+        id="Biologi"
+        name="program"
+        value="Biologi"
+      />Biologi<br />
+
+      <br />
+
+      <!-- Hobbies (Checkboxes) -->
+      <label for="hobbies">Hobbies:</label><br />
+      <input type="checkbox" name="hobbies[]" value="Futsal" />Futsal<br />
+      <input
+        type="checkbox"
+        name="hobbies[]"
+        value="Badminton"
+      />Badminton<br />
+      <input type="checkbox" name="hobbies[]" value="Membaca" />Membaca<br />
+      <input type="checkbox" name="hobbies[]" value="Menulis" />Menulis<br />
+      <input
+        type="checkbox"
+        name="hobbies[]"
+        value="Travelling"
+      />Travelling<br />
+
+      <br />
+
+      <!-- Password -->
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" /><br /><br />
+
+      <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
