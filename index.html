@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Search</title>
+    <script src="ajax.js"></script>
+  </head>
+  <body>
+    <h1>Search for a Book</h1>
+    <form onsubmit="return false;">
+      <input type="text" id="book_title" placeholder="Enter book title" />
+      <button
+        type="button"
+        onclick="searchBook(document.getElementById('book_title').value)"
+      >
+        Search
+      </button>
+    </form>
+    <div id="book_details">
+      <!-- Book details will be displayed here -->
+    </div>
+  </body>
+</html>
