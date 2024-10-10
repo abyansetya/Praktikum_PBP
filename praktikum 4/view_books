@@ -1,0 +1,65 @@
+<?php
+session_start();
+require_once('./lib/db_login.php');
+
+// Redirect to login page if the user is not logged in
+if (!isset($_SESSION['username'])) {
+  header('Location: ./login.php');
+  exit;
+}
+
+include('./header.php');
+?>
+<br>
+<div class="card mt-5">
+  <div class="card-header">Books Data</div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ISBN</th>
+          <th>Author</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        // Prepare a statement to safely fetch book data
+        $query = "SELECT isbn, author, title, price FROM books";
+        if ($stmt = $db->prepare($query)) {
+          $stmt->execute();
+          $result = $stmt->get_result();
+
+          if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              echo '<tr>';
+              echo '<td>' . htmlspecialchars($row['isbn']) . '</td>';
+              echo '<td>' . htmlspecialchars($row['author']) . '</td>';
+              echo '<td>' . htmlspecialchars($row['title']) . '</td>';
+              echo '<td>$' . number_format($row['price'], 2) . '</td>';
+              echo '<td><a class="btn btn-primary btn-sm" href="show_cart.php?id=' . urlencode($row['isbn']) . '">Add to Cart</a></td>';
+              echo '</tr>';
+            }
+          } else {
+            echo '<tr><td colspan="5" class="text-center">No books available</td></tr>';
+          }
+
+          // Clean up
+          $stmt->close();
+        } else {
+          echo '<tr><td colspan="5" class="text-center">Error fetching data from the database</td></tr>';
+        }
+
+        // Close the database connection
+        $db->close();
+        ?>
+      </tbody>
+    </table>
+    <br />
+    <div>Total Rows: <?php echo $result->num_rows; ?></div>
+  </div>
+</div>
+
+<?php include('./footer.php'); ?>
